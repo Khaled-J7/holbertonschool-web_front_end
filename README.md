@@ -32,5 +32,6 @@ Specifies that web applications should be accessible on devices of various shape
 
 ---
 
-## Author 
+## Author
+
 * Khaled jallouli
