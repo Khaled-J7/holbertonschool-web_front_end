@@ -2,7 +2,7 @@
 
 ---
 
-![bootstrap Img](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD5n70phIgsn2n9yveLRCYXjSTrV5XAkmlQA&s)
+![bootstrap Img](https://www.bootstrapdash.com/blog/wp-content/uploads/2017/08/bootstrap-4-beta-whats-new.jpg)
 
 ---
 
@@ -18,13 +18,13 @@ For this project, we will use Bootstrap 4.4 and only the CSS styling part.
 
 ## Tasks:
 
-0* Reboot styling 
-1* Blocks
-2* Table of chemical elements 
-3* Cards
-4* Bob Dylan
-5* Show/Hide - screen size
-6* Overwrite CSS
+* Reboot styling 
+* Blocks
+* Table of chemical elements 
+* Cards
+* Bob Dylan
+* Show/Hide - screen size
+* Overwrite CSS
 
 ### Author
 * Khaled Jallouli   
