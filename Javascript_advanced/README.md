@@ -21,21 +21,23 @@
 
 ## Tasks
 
-1- Lexical scoping and welcome message
-2- Closure Scope Chain
-3- Closure
-4- Closure and loops
-5- Complex Closure
-6- Changing DOM with closure
-7- Private methods with closure
-8- Stack order and setTimeout
-9- Stack order in functions
-10- Prime numbers & timing execution
-11- Execution stack & timing execution
-12- Changing stack order using setTimeout
-13- Binding
-14- Binding + Closure
-15- Simple callback
+1. **Lexical scoping and welcome message**
+2. **Closure Scope Chain**
+3. **Closure**
+4. **Closure and loops**
+5. **Complex Closure**
+6. **Changing DOM with closure**
+7. **Private methods with closure**
+8. **Stack order and setTimeout**
+9. **Stack order in functions**
+10. **Prime numbers & timing execution**
+11. **Execution stack & timing execution**
+12. **Changing stack order using setTimeout**
+13. **Binding**
+14. **Binding + Closure**
+15. **Simple callback**
+
+---
 
 ### Author
 
