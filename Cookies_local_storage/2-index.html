@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create A Basic Cookie 🍪</title>
+    <style>
+      button {
+        border-radius: 5px;
+        background-color: white;
+        font-size: 1.5rem;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h2 {
+        font-family: serif;
+        font-size: 2.5rem;
+      }
+      input {
+        font-size: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Login to the website</h2>
+    <input type="text" id="firstname" placeholder="Firstname" />
+    <input type="text" id="email" placeholder="Email" />
+    <button onclick="setCookies()">Log me in</button>
+    <h2>Cookies</h2>
+    <button onclick="showCookies()">Show the cookies</button>
+
+    <!-- Vanilla JavaScript -->
+    <script>
+      // Function to set cookies with expiration date and specific path
+      function setCookies() {
+        const firstNameValue = document.getElementById("firstname").value;
+        const emailInputValue = document.getElementById("email").value;
+
+        // Set expiration date to 10 days from now
+        const date = new Date();
+        date.setTime(date.getTime() + 10 * 24 * 60 * 60 * 1000); // 10 days in milliseconds
+        const expires = "expires=" + date.toUTCString();
+
+        // Set the cookies with expiration date and path
+        document.cookie = `firstname=${firstNameValue}; ${expires}; path=/`;
+        document.cookie = `email=${emailInputValue}; ${expires}; path=/`;
+      }
+
+      // Function to get the value of a specific cookie by name
+      function getCookie(name) {
+        const cookies = document.cookie.split("; "); // split cookies into an array
+        for (let cookie of cookies) {
+          const [cookieName, CookieValue] = cookie.split("="); // split each cookie into name and value
+          if (cookieName === name) {
+            return decodeURIComponent(CookieValue); // Decode the value and return it
+          }
+        }
+        return ""; // return an empty string if the cookie is not found
+      }
+
+      // Function to show cookies
+      function showCookies() {
+        const email = getCookie("email"); // Get the email cookie
+        const firstname = getCookie("firstname"); // Get the firstname cookie
+
+        // Create a paragraph element to display the cookies
+        const pg = document.createElement("p");
+        pg.innerHTML = `Email: ${email} - Firstname: ${firstname}`;
+        document.body.appendChild(pg);
+      }
+    </script>
+  </body>
+</html>
