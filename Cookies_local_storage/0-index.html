@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create A Basic Cookie 🍪</title>
+    <style>
+      button {
+        border-radius: 5px;
+        background-color: white;
+        font-size: 1.5rem;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h2 {
+        font-family: serif;
+        font-size: 2.5rem;
+      }
+      input {
+        font-size: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Login to the website</h2>
+    <input type="text" id="firstname" placeholder="Firstname" />
+    <input type="text" id="email" placeholder="Email" />
+    <button onclick="setCookies()">Log me in</button>
+    <h2>Cookies</h2>
+    <button onclick="showCookies()">Show the cookies</button>
+
+    <!-- Vanilla JavaScript -->
+    <script>
+        function setCookies() {
+          const firstNameValue = document.getElementById('firstname').value;
+          document.cookie = `firstname=${firstNameValue}`;
+          const emailInputValue = document.getElementById('email').value;
+          document.cookie = `email=${emailInputValue}`;
+        };
+
+        function showCookies() {
+          const pg = document.createElement('p');
+          pg.innerHTML = `Cookies: ${document.cookie}`;
+          document.body.appendChild(pg);
+        }
+    </script>
+  </body>
+</html>
