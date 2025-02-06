@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage Shopping Cart 🛒</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        background-color: #f0f0f0;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      li:hover {
+        background-color: #e0e0e0;
+      }
+      p {
+        font-size: 1.2rem;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Vanilla JavaScript -->
+    <script>
+      // Check if local storage is supported
+      if (!window.localStorage) {
+        alert('Sorry, your browser does not support Web storage. Try again with a better one');
+      } else {
+        // Array of available items
+        const availableItems = ['Shampoo', 'Soap', 'Sponge', 'Water'];
+
+        // Function to add an item to the cart
+        function addItemToCart(item) {
+          localStorage.setItem(item, true); // Add the item to local storage
+          displayCart(); // Update the cart message
+        }
+
+        // Function to create the store (list of available items)
+        function createStore() {
+          const ul = document.createElement('ul'); // Create a ul element
+
+          // Loop through the available items and create a list item for each
+          availableItems.forEach((item) => {
+            const li = document.createElement('li'); // Create a li element
+            li.textContent = item; // Set the text content to the item name
+            li.onclick = () => addItemToCart(item); // Add click event to call addItemToCart
+            ul.appendChild(li); // Append the li to the ul
+          });
+
+          document.body.appendChild(ul); // Append the ul to the body
+        }
+
+        // Function to display the cart message
+        function displayCart() {
+          // Count the number of items in local storage
+          let itemCount = 0;
+          for (let key in localStorage) {
+            if (localStorage.getItem(key) === 'true') {
+              itemCount++;
+            }
+          }
+
+          // If there are items in the cart, display the message
+          if (itemCount > 0) {
+            const cartMessage = document.querySelector('.cart-message');
+            if (!cartMessage) {
+              const p = document.createElement('p'); // Create a p element
+              p.className = 'cart-message';
+              p.textContent = `You previously had ${itemCount} items in your cart`;
+              document.body.appendChild(p); // Append the p to the body
+            } else {
+              cartMessage.textContent = `You previously had ${itemCount} items in your cart`;
+            }
+          }
+        }
+
+        // Initialize the application
+        function initApp() {
+          createStore(); // Create the store
+          displayCart(); // Display the cart message if items exist
+        }
+
+        // Call the initApp function to start the application
+        initApp();
+      }
+    </script>
+  </body>
+</html>
